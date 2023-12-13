@@ -1,13 +1,13 @@
-# import gspread
-# from oauth2client.service_account import ServiceAccountCredentials
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
-# scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file" , "https://www.googleapis.com/auth/drive"]
+scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file" , "https://www.googleapis.com/auth/drive"]
 
-# creds = ServiceAccountCredentials.from_json_keyfile_name('falcon.json', scope)
+creds = ServiceAccountCredentials.from_json_keyfile_name('falcon.json', scope)
 
-# client = gspread.authorize(creds)
+client = gspread.authorize(creds)
 
-# sheet = client.open('Prueba').sheet1
+sheet = client.open('Prueba').sheet1
 
 # access data
 #print(sheet.get_all_records())
@@ -16,7 +16,8 @@
 # print(sheet.cell(2,1).value)
 
 # insert data
-# sheet.insert_row(['Cats', 'Dogs'], 3)
+sheet.insert_row(['Cats', 'Dogs'], 3)
+sheet.insert_cols
 
 # delete row
 # sheet.delete_row(3)
