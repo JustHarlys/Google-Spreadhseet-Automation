@@ -6,6 +6,7 @@ Como se hara?
 
 1- Conecte la API de Google Sheets a Python con librerias y demas. Para directamente desde la corrida del programa insertar los datos
 2- Se me ocurre un bucle infinito que pida una entrada de usuario y asi hasta que salgamos del bucle por opcion propia (Sin el uso de break)
+2.1 - Establecer un bucle dentro del bloque de insercion para asi poder introducir data hasta que ya la hayamos introducido toda, y asi no tener que ejecutar el programa desde 0 por cada dato que querramos entrar
 3- Establecer dentro del input la fila y columna donde queremos insertar los datos
 4- Establecer una funcion para extraer datos que queramos y si tienen ocurrencias pues traerlas
 5- Filtrar por las fechas para extraer los datos escritos en ciertas fechas y asi no tener que buscar de manera tan centrica y especifica

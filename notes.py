@@ -16,14 +16,26 @@ sheet = client.open('Prueba').sheet1
 # print(sheet.cell(2,1).value)
 
 # insert data
-sheet.insert_row(['Cats', 'Dogs'], 3)
-sheet.insert_cols
+# sheet.insert_row(['Cats', 'Dogs'], 3)
+# sheet.insert_row(['Cats', 'Dogs'], 4)
+# sheet.insert_row(['Cats', 'Dogs'], 5)
+values = [['Hola'], ['Adios']]
+sheet.insert_cols(values, 4)
+# sheet.insert_note
+# sheet.insert_notes
+# sheet.insert_rows
 
 # delete row
 # sheet.delete_row(3)
+# sheet.delete_rows(3, 5)
+
+
+
 
 #update cell
 # sheet.update_cell(2,1, 'Jejeje')
+
+
 
 # Look for a value
 # cell = sheet.find('Jejeje')
