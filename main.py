@@ -1,3 +1,4 @@
+import pandas as pd
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file" , "https://www.googleapis.com/auth/drive"]
@@ -50,8 +51,8 @@ Que quieres ver?
                 print(sheet.col_values(int(input("Que columna deseas ver?: "))))
 
             elif const_0 == 3:
-                print(sheet.cell(int(input("Que celda deseas ver? F,C"))))
-                
+                print(sheet.cell(int(input("Que celda deseas ver? Fila: ")),int(input("Columna: "))).value)
+
             elif const_0 == 4:
                 break
             else:
@@ -67,15 +68,13 @@ Que quieres ver?
                 
 Donde quieres insertar?
                   
-0) Insertar en fila 
-1) Insertar en columna
-9) Regresar
+1) Insertar en fila 
+2) Insertar en columna
+3) Regresar
                     
                     """)
             
-            
             const_1 == int(input("Elige una opción: "))
-            
             
             if const_1 == 0:
                 cadena_a_insertar = input('Que deseas insertar?')
@@ -87,7 +86,7 @@ Donde quieres insertar?
                 sheet.insert_cols([cadena_a_insertar], index=int(input("En que columna?: ")))
                 print("La insercion ha sido un exito!")
                 
-            elif const_1 == 2:
+            elif const_1 == 9:
                 break
             else:
                 print('Ingresa una opción válida, por favor')
@@ -102,10 +101,10 @@ Donde quieres insertar?
     
     
     
-    elif const == 4:
-        break
+#     elif const == 4:
+#         break
     
-    else: print('Ingrese una opción válida, por favor')
+#     else: print('Ingrese una opción válida, por favor')
                 
             
                 
