@@ -3,11 +3,22 @@ Script para interactuar con hojas de cálculo de Google usando la API de gspread
 Asegúrate de tener el archivo JSON de credenciales (archivo.json) en la ruta de este archivo!.
 """
 
+## Importamos la libreria gspread, hay que instalarla primero en la consola
 import gspread
+## Importamos la libreria oauth2client y traemos ciertas funciones (Hay que instalarla tambien)
 from oauth2client.service_account import ServiceAccountCredentials
+
+## Definimos la variable scope con los siguientes enlaces
 scope = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive.file" , "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name('falcon.json', scope)
+
+## Creamos la variable creds utilizando la funcion importada
+## En la parte donde dice 'archivo.json' debemos pasarle la ruta del archivo .json donde tenemos las credenciales (Lease el README.md si no sabe como obtener las credenciales)
+## Y como segundo parametro pasamos la variable scope ya definida anteriormente
+creds = ServiceAccountCredentials.from_json_keyfile_name('archivo.json', scope)
+## Con client autorizamos las credenciales
 client = gspread.authorize(creds)
+
+## Y con sheet abrimos la hoja, le pasamos client.open('Nombre de la hoja').sheet1(Este es el numero de la hoja, sheet1, sheet2, sheetN.)
 sheet = client.open('Prueba').sheet1
 
 ## Declaramos el manejo de errores en una sola funcion, para asi ahorrarnos codigo y rendimiento
