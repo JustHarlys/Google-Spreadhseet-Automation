@@ -19,7 +19,7 @@ creds = ServiceAccountCredentials.from_json_keyfile_name('archivo.json', scope)
 client = gspread.authorize(creds)
 
 ## Y con sheet abrimos la hoja, le pasamos client.open('Nombre de la hoja').sheet1(Este es el numero de la hoja, sheet1, sheet2, sheetN.)
-sheet = client.open('Prueba').sheet1
+sheet = client.open('Nombre de la hoja').sheet1
 
 ## Declaramos el manejo de errores en una sola funcion, para asi ahorrarnos codigo y rendimiento
 
@@ -71,7 +71,7 @@ Que quieres ver?
 
             if const_0 == 0:
                 ## sheet.get_all_records() trae todo lo escrito en la hoja
-                print(sheet.get_all_records())
+                print(sheet.get_all_values())
 
             elif const_0 == 1:
                 ## sheet.row_values() trae todos los datos de una fila que le pasemos
